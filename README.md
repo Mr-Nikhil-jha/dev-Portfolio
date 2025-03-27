@@ -1,60 +1,12 @@
-# Dev Portfolio
+# React + Vite
 
-A modern and responsive developer portfolio built using **React.js**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Features
+Currently, two official plugins are available:
 
--   🔥 **React.js** for dynamic UI
--   🎨 **Styled with Tailwind CSS** for a sleek design
--   📱 **Fully Responsive** (Mobile-Friendly)
--   🌐 **SEO Optimized** for better visibility
--   ⚡ **Fast & Lightweight** performance
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🛠️ Tech Stack
+## Expanding the ESLint configuration
 
--   **Frontend:** React.js, Tailwind CSS
--   **Deployment:** Vercel / Netlify / GitHub Pages
-
-## 📸 Screenshots
-
-![Portfolio Screenshot](https://via.placeholder.com/800x400 "Portfolio Preview")
-
-## 🎯 Live Demo
-
-[🔗 View Live](https://yourportfolio.live) _(Update this link with your live site)_
-
-## 🔧 Installation
-
-Clone the repository and install dependencies:
-
-```bash
-# Clone the repository
-git clone https://github.com/Mr-Nikhil-jha/dev-Portfolio.git
-
-# Navigate into the directory
-cd dev-portfolio
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-## ⚙️ Usage
-
--   Modify `src/assets/data.json` (or relevant files) to add your own projects, skills, and details.
--   Customize styles in `src/styles` (if applicable).
--   Deploy using Vercel, Netlify, or GitHub Pages.
-
-## 🤝 Contributing
-
-Feel free to fork the repo and submit pull requests if you have improvements or suggestions!
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-## 📞 Contact
-
--   **GitHub:** https://github.com/Mr-Nikhil-jha/
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

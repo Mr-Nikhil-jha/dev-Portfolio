@@ -1,7 +1,14 @@
 import React from "react";
+import PortfolioHeader from "../HomePageComponents/PortfolioHeader";
+import AboutSection from "../HomePageComponents/AboutSection";
 
 function Home() {
-  return <div className="text-color">portfolio Home page</div>;
+  return (
+    <>
+      <PortfolioHeader />
+      <AboutSection />
+    </>
+  );
 }
 
 export default Home;

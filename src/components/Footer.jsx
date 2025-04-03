@@ -1,43 +1,35 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
+import { Mail } from "@mui/icons-material";
 
 export default function Footer() {
-  const [value, setValue] = React.useState(0);
-
-  return (
-    <>
-      <footer className="fixed  bottom-0 left-0 w-full flex justify-center items-center h-24 bg-white/20 backdrop-blur-xl border-t border-white/30 shadow-lg rounded-t-2xl px-4 ">
-        <div className="w-full max-w-lg flex flex-col items-center gap-3">
-          <BottomNavigation
-            style={{ backgroundColor: "transparent" }}
-            showLabels
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            className="rounded-lg flex gap-6"
-          >
-            <BottomNavigationAction
-              className="footer_icons hover:text-gray-300 transition-transform transform hover:scale-125"
-              style={{ color: "white" }}
-              icon={<GithubIcon sx={{ fontSize: 45 }} />}
-            />
-            <BottomNavigationAction
-              className="footer_icons hover:text-blue-400 transition-transform transform hover:scale-125"
-              style={{ color: "white" }}
-              icon={<LinkedInIcon sx={{ fontSize: 45 }} />}
-            />
-          </BottomNavigation>
-        </div>
-        <p className="absolute bottom-2 right-4 text-white text-md font-bold tracking-wide">
-          Created by{" "}
-          <span className="text-white  devlopBy ">Nikhil & Ajay</span>
-        </p>
-      </footer>
-    </>
-  );
+    return (
+        <>
+            <footer className="bg-[#0A0E27] text-white p-4 fixed bottom-0 w-full h-28">
+                <div className=" text-center text-lg font-mono">All Rights Reserved by Dev-portfolio © 2025</div>
+                <div>
+                    <ul className="flex justify-center gap-8 mt-4">
+                        <li className="hover:text-gray-400 transition duration-200">
+                            <a href="https://github.com/mr-nikhil-jha" target="_blank">
+                                <GithubIcon sx={{ fontSize: 30 }} className="cursor-pointer" />
+                            </a>
+                        </li>
+                        <li className="hover:text-gray-400 transition duration-200">
+                            <a href="https://linkedin.com" target="_blank">
+                                <LinkedInIcon sx={{ fontSize: 30 }} className="cursor-pointer" />
+                            </a>
+                        </li>
+                        <li className="hover:text-gray-400 transition duration-200">
+                            <a href="mailto:mail@domain.com" onclick="window.location.href='np.html'">
+                                <EmailIcon sx={{ fontSize: 30 }} className="cursor-pointer" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </>
+    );
 }

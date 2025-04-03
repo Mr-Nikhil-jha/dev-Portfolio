@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, Person, ListAlt, Description } from "@mui/icons-material";
 
 const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // Detect scroll to apply glassmorphic effect
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <nav className="bg-[#0A0E27] p-4 text-white flex justify-center space-x-8 fixed w-full z-10">
+        <nav className={`p-4 text-white flex justify-center space-x-8 fixed w-full z-10 transition-all duration-300 ${isScrolled ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md" : "bg-[#0A0E27]"}`}>
             <NavItem to="/" icon={<Home fontSize="small" />} label="Home" />
             <NavItem to="/skill-set" icon={<Person fontSize="small" />} label="Skill Set" />
             <NavItem to="/project" icon={<ListAlt fontSize="small" />} label="Projects" />

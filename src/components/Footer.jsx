@@ -8,7 +8,7 @@ import { Mail } from "@mui/icons-material";
 export default function Footer() {
     return (
         <>
-            <footer className="bg-[#0A0E27] text-white p-4 fixed bottom-0 w-full h-28">
+            <footer className="bg-[#0A0E27] text-white p-4  bottom-0 w-full h-28">
                 <div className=" text-center text-lg font-mono">All Rights Reserved by Dev-portfolio © 2025</div>
                 <div>
                     <ul className="flex justify-center gap-8 mt-4">
@@ -23,7 +23,7 @@ export default function Footer() {
                             </a>
                         </li>
                         <li className="hover:text-gray-400 transition duration-200">
-                            <a href="mailto:mail@domain.com" onclick="window.location.href='np.html'">
+                            <a href="mailto:mail@domain.com" onClick={() => (window.location.href = "np.html")}>
                                 <EmailIcon sx={{ fontSize: 30 }} className="cursor-pointer" />
                             </a>
                         </li>

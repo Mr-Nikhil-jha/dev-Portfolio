@@ -1,7 +1,13 @@
 import React from "react";
+import { TechSkill, TechUsed } from "../index";
 
 function Skillset() {
-  return <div className="text-color">Skillset</div>;
+  return (
+    <div>
+      <TechSkill />
+      <TechUsed />
+    </div>
+  );
 }
 
 export default Skillset;

@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home() {
-  return <div className="text-color">Home page</div>;
+  return <div className="text-color">portfolio Home page</div>;
 }
 
 export default Home;

@@ -9,9 +9,9 @@ export default function Footer() {
     return (
         <>
             <footer className="bg-[#0A0E27] text-white p-4  bottom-0 w-full h-28">
-                <div className=" text-center text-lg font-mono">All Rights Reserved by Dev-portfolio © 2025</div>
+                <div className=" text-center md:text-lg font-mono">All Rights Reserved by Dev-portfolio © 2025</div>
                 <div>
-                    <ul className="flex justify-center gap-8 mt-4">
+                    <ul className="flex justify-center gap-8 mt-4 ">
                         <li className="hover:text-gray-400 transition duration-200">
                             <a href="https://github.com/mr-nikhil-jha" target="_blank">
                                 <GithubIcon sx={{ fontSize: 30 }} className="cursor-pointer" />

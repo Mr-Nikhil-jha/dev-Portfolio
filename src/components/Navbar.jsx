@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Person, ListAlt, Description } from "@mui/icons-material";
+import { Home, Person, ListAlt, Description, Menu, Close } from "@mui/icons-material";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     // Detect scroll to apply glassmorphic effect
     useEffect(() => {
@@ -15,11 +16,18 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`p-4 text-white flex justify-center space-x-8 fixed w-full z-10 transition-all duration-300 ${isScrolled ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md" : "bg-[#0A0E27]"}`}>
-            <NavItem to="/Home" icon={<Home fontSize="small" />} label="Home" />
-            <NavItem to="/skill-set" icon={<Person fontSize="small" />} label="Skill Set" />
-            <NavItem to="/project" icon={<ListAlt fontSize="small" />} label="Projects" />
-            <NavItem to="/resume" icon={<Description fontSize="small" />} label="Resume" />
+        <nav className={`p-4 text-white fixed w-full top-0 z-10 transition-all duration-300 ${isScrolled ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md" : "bg-[#0A0E27]"}`}>
+            <div className="flex justify-between items-center md:hidden px-4">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+                {isOpen ? <Close fontSize="large" /> : <Menu fontSize="large" />}
+                </button>
+            </div>
+            <div className={`flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "block" : "hidden"} md:flex`}>
+                <NavItem to="/Home" icon={<Home fontSize="small" />} label="Home" />
+                <NavItem to="/skill-set" icon={<Person fontSize="small" />} label="Skill Set" />
+                <NavItem to="/project" icon={<ListAlt fontSize="small" />} label="Projects" />
+                <NavItem to="/resume" icon={<Description fontSize="small" />} label="Resume" />
+            </div>
         </nav>
     );
 };

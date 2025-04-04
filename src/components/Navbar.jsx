@@ -1,33 +1,60 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Home, Person, ListAlt, Description, Menu, Close } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(window.innerWidth >= 768); // Open by default on desktop
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     // Detect scroll to apply glassmorphic effect
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0);
         };
+
+        const handleResize = () => {
+            const mobileView = window.innerWidth < 768;
+            setIsMobile(mobileView);
+            setIsOpen(!mobileView); // Auto-show menu on desktop
+        };
+
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     return (
-        <nav className={`p-4 text-white fixed w-full top-0 z-10 transition-all duration-300 ${isScrolled ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md" : "bg-[#0A0E27]"}`}>
-            <div className="flex justify-between items-center md:hidden px-4">
-                <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-                {isOpen ? <Close fontSize="large" /> : <Menu fontSize="large" />}
-                </button>
-            </div>
-            <div className={`flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? "block" : "hidden"} md:flex`}>
+        <nav className={`p-4 text-white fixed w-full md:top-0 md:bottom-auto z-10 transition-all duration-300 ${isScrolled ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md" : "bg-[#0A0E27]"}`}>
+            {/* Mobile Menu Toggle Button */}
+            {isMobile && (
+                <div className="flex justify-end items-center md:hidden px-4">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+                        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                            {isOpen ? <Close fontSize="large" /> : <Menu fontSize="large" />}
+                        </motion.div>
+                    </button>
+                </div>
+            )}
+
+            {/* Navigation Items */}
+            <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 overflow-hidden md:overflow-visible ${isMobile ? "" : "opacity-100 !h-auto"}`}
+            >
                 <NavItem to="/Home" icon={<Home fontSize="small" />} label="Home" />
                 <NavItem to="/skill-set" icon={<Person fontSize="small" />} label="Skill Set" />
                 <NavItem to="/project" icon={<ListAlt fontSize="small" />} label="Projects" />
                 <NavItem to="/resume" icon={<Description fontSize="small" />} label="Resume" />
-            </div>
+            </motion.div>
         </nav>
     );
 };

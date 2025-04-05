@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 py-20">
+    <div className=" text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 py-20">
       {/* Left Section: Text Content */}
       <div className="space-y-6 flex-1 max-w-2xl">
         <h2 className="text-5xl ml-15">

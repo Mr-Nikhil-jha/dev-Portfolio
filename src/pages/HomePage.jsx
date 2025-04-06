@@ -31,14 +31,19 @@ function HomePage() {
   ];
 
   return (
-    <>
+    <div className="MainHomePage">
       <PortfolioHeader />
       <AboutSection />
-      <TechUsed iconDataForTechUsed={iconDataForTechUsed} />
-      <TechSkill iconData={iconData} />
+    
+      <TechUsed
+        iconDataForTechUsed={iconDataForTechUsed}
+      />
+      <TechSkill
+        iconData={iconData}
+      />
 
       {/* Section Title */}
-      <div className="mb-20 bg-gradient-to-b  py-16 px-4">
+      <div className=" bg-gradient-to-b  py-16 px-4 from-gray-900 via-black to-gray-900">
         <div className="text-center w-max m-auto group">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white relative">
             <span className="relative z-10">Recent Top</span>
@@ -48,8 +53,8 @@ function HomePage() {
         </div>
 
         {/* Projects Grid (desktop/tablet) */}
-        <div className="hidden md:flex justify-center py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-7xl">
+        <div className="hidden md:flex justify-center py-12 from-gray-900 via-black to-gray-900 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-7xl from-gray-900 via-black to-gray-900">
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
@@ -57,7 +62,7 @@ function HomePage() {
         </div>
 
         {/* Swiper Slider (mobile) */}
-        <div className="md:hidden pt-10">
+        <div className="md:hidden pt-10  ">
           <Swiper
             spaceBetween={20}
             // pagination={{ clickable: true }}
@@ -75,7 +80,7 @@ function HomePage() {
           </Swiper>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

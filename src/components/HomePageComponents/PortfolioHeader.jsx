@@ -22,7 +22,7 @@ const PortfolioHeader = () => {
         initial={{ opacity: 0, x: -60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="space-y-6 flex-1/6 "
+        className="space-y-6 flex-1 "
       >
         <h2 className="text-3xl md:text-5xl font-bold flex items-center">
           Hi There!{" "}

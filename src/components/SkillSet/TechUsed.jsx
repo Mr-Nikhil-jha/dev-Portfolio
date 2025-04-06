@@ -1,8 +1,10 @@
 import React from "react";
 
-function TechUsed({ iconDataForTechUsed }) {
+function TechUsed({ iconDataForTechUsed, className = "" }) {
   return (
-    <div className="flex justify-center items-center bg-gradient-to-br ">
+    <div
+      className={`flex justify-center items-center bg-gradient-to-br ${className}`}
+    >
       <div className="p-6 bg-transparent mt-2">
         <div className="text-center py-3 group w-max m-auto">
           <span className="text-white font-bold text-3xl relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 group-hover:after:w-full after:transition-all after:duration-300">

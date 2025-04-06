@@ -1,5 +1,5 @@
 import HomePage from "../pages/HomePage.jsx";
-import Projects from "../pages/Projects";
+import Projects from "../pages/Projects.jsx";
 import Resume from "../pages/Resume";
 import Skillset from "../pages/Skillset";
 import Header from "./Header";
@@ -11,4 +11,16 @@ import PortfolioHeader from "../components/HomePageComponents/PortfolioHeader.js
 import AboutSection from "../components/HomePageComponents/AboutSection.jsx";
 // import ProjectCard from "./ProjectCard/ProjectCard.jsx";
 
-export { HomePage, Projects, Header, Resume, Skillset, Footer, Navbar, TechSkill, TechUsed, PortfolioHeader, AboutSection };
+export {
+  HomePage,
+  Projects,
+  Header,
+  Resume,
+  Skillset,
+  Footer,
+  Navbar,
+  TechSkill,
+  TechUsed,
+  PortfolioHeader,
+  AboutSection,
+};

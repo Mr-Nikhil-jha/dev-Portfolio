@@ -38,7 +38,11 @@ const Navbar = () => {
       >
         {/* Logo (Only show in mobile) */}
         {isMobile && (
-          <img src={logo} className="w-14 -ml-2 h-12 object-contain" alt="Logo" />
+          <img
+            src={logo}
+            className="w-14 -ml-2 h-12 object-contain"
+            alt="Logo"
+          />
         )}
 
         {/* Navigation Links */}
@@ -54,7 +58,7 @@ const Navbar = () => {
             label="Skill Set"
           />
           <NavItem
-            to="/project"
+            to="/Projects"
             icon={<ListAlt fontSize="small" />}
             label="Projects"
           />

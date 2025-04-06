@@ -1,5 +1,4 @@
 import React from "react";
-// import { Typewriter } from "react-simple-typewriter";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
@@ -17,40 +16,54 @@ const WavingHand = () => {
 
 const PortfolioHeader = () => {
   return (
-    <div className=" text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 py-20">
-      <div className="space-y-5 flex-1 min-w-[300px]">
-        {" "}
-        <h2 className="text-4xl font-bold flex items-center">
+    <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col md:flex-row items-center md:justify-between px-6 md:px-20 py-20 gap-y-6 md:gap-y-0">
+      {/* Left Section */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-6 flex-1/6 "
+      >
+        <h2 className="text-3xl md:text-5xl font-bold flex items-center">
           Hi There!{" "}
-          <span className="ml-2">
+          <span className="ml-3">
             <WavingHand />
           </span>
         </h2>
-        <h1 className="text-5xl  text-purple-500">
-          <span className="text-white">I'm</span> programmer
+
+        <h1 className="text-4xl md:text-6xl font-extrabold">
+          <span className="text-white">I'm </span>
+          <span className="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+            Programmer
+          </span>
         </h1>
-        <p className="text-5xl text-purple-400 min-h-[50px] pt-10">
-          {" "}
+
+        <p className="text-2xl md:text-3xl text-purple-400 font-semibold">
           <Typewriter
             words={["Effective Problem Solver", "Front-End Web Developer"]}
             loop={true}
             cursor
             cursorStyle="|"
-            typeSpeed={120}
+            typeSpeed={100}
             deleteSpeed={50}
             delaySpeed={1500}
           />
         </p>
-      </div>
+      </motion.div>
 
-      <div className="mt-10 md:mt-0 flex-shrink-0 w-90 ">
-        {" "}
+      {/* Right Section - Image */}
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="mt-2 md:mt-0 flex-shrink-0"
+      >
         <img
           src="images/title.png"
           alt="Developer Illustration"
-          className="w-full md:max-w-[500px] h-auto"
+          className="w-[260px] md:w-[450px] h-auto rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

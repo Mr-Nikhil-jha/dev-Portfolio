@@ -44,14 +44,21 @@ const Navbar = () => {
         isScrolled
           ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md"
           : "bg-[#0A0E27]"
+<<<<<<< HEAD
       } ${isMobile ? "rounded-4xl" : ""}`}
+=======
+      }`}
+>>>>>>> 9e07b93e323738270d116c204a59977050eaf990
     >
       {/* Mobile Menu Toggle Button */}
       {isMobile && (
         <div className="flex justify-end items-center md:hidden px-4">
+<<<<<<< HEAD
           <div className="left-0 fixed flex items-center justify-center w-16 h-16  rounded-full shadow-lg bg-transparent">
             <img src={logo} className="w-20 h-15" />
           </div>
+=======
+>>>>>>> 9e07b93e323738270d116c204a59977050eaf990
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
@@ -71,7 +78,11 @@ const Navbar = () => {
         }
         transition={{ duration: 0.3 }}
         className={`flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 overflow-hidden md:overflow-visible ${
+<<<<<<< HEAD
           isMobile ? " " : "opacity-100 !h-auto"
+=======
+          isMobile ? "" : "opacity-100 !h-auto"
+>>>>>>> 9e07b93e323738270d116c204a59977050eaf990
         }`}
       >
         <NavItem to="/" icon={<Home fontSize="small" />} label="Home" />

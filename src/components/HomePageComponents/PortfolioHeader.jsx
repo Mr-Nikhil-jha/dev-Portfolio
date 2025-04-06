@@ -17,7 +17,7 @@ const WavingHand = () => {
 
 const PortfolioHeader = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 py-20">
+    <div className=" text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 py-20">
       <div className="space-y-5 flex-1 min-w-[300px]">
         {" "}
         <h2 className="text-4xl font-bold flex items-center">

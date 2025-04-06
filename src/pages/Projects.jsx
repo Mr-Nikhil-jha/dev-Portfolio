@@ -4,6 +4,7 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 function Projects() {
   return (
+<<<<<<< HEAD
     <div className="min-h-screen flex flex-col">
       {/* Header (optional) */}
       <header className="p-4">
@@ -20,6 +21,16 @@ function Projects() {
           <ProjectCard className="flex-shrink-0 w-[80%] sm:w-[60%] md:w-[30%]" />
         </div>
       </main>
+=======
+    <div className="project_Card">
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+>>>>>>> 9e07b93e323738270d116c204a59977050eaf990
     </div>
   );
 }

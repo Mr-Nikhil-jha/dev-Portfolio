@@ -1,4 +1,5 @@
 import React from "react";
+// import { Typewriter } from "react-simple-typewriter";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
@@ -42,12 +43,12 @@ const PortfolioHeader = () => {
         </p>
       </div>
 
-      <div className="mt-10 md:mt-0 flex-shrink-0">
+      <div className="mt-10 md:mt-0 flex-shrink-0 w-90 ">
         {" "}
         <img
           src="images/title.png"
           alt="Developer Illustration"
-          className="w-[500px] max-w-[500px] h-auto"
+          className="w-full md:max-w-[500px] h-auto"
         />
       </div>
     </div>

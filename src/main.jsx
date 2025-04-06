@@ -10,7 +10,7 @@ import { HomePage, Projects, Resume, Skillset } from "./components/index.js";
 let router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App />}>
-            <Route index path="Home" element={<HomePage />} />
+            <Route index path="/" element={<HomePage />} />
             <Route path="skill-set" element={<Skillset />} />
             <Route path="project" element={<Projects />} />
             <Route path="Resume" element={<Resume />} />

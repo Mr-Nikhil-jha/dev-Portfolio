@@ -4,7 +4,7 @@ import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 
 function ProjectCard() {
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mt-15">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mt-20">
             <a href="#">
                 <img className="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
             </a>

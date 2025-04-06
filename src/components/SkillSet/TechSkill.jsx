@@ -2,7 +2,7 @@ import React from "react";
 
 function TechSkill({ iconData }) {
   return (
-    <div className="mt-10 flex justify-center items-center h-screen bg-gradient-to-br ">
+    <div className="md:mt-10 flex justify-center items-center h-screen bg-gradient-to-br ">
       <div className="p-6 bg-transparent mt-5">
         <div className="text-center py-3 group w-max m-auto">
           <span className="text-white font-bold text-3xl relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 group-hover:after:w-full after:transition-all after:duration-300">

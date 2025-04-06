@@ -1,31 +1,16 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  Home,
-  Person,
-  ListAlt,
-  Description,
-  Menu,
-  Close,
-} from "@mui/icons-material";
-import { motion } from "framer-motion";
-import logo from "../assets/logo.gif"; // Adjust the path to your logo
+import { Home, Person, ListAlt, Description } from "@mui/icons-material";
+import logo from "../assets/logo.gif";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(window.innerWidth >= 768); // Open by default on desktop
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // Detect scroll to apply glassmorphic effect
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     const handleResize = () => {
-      const mobileView = window.innerWidth < 768;
-      setIsMobile(mobileView);
-      setIsOpen(!mobileView); // Auto-show menu on desktop
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,86 +25,62 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`p-4 text-white fixed w-full md:top-0 md:bottom-auto z-10 transition-all duration-300 ${
+      className={`p-3 text-white fixed w-full md:top-0 md:bottom-auto z-20 transition-all duration-300 ${
         isScrolled
           ? "bg-[#0A0E27]/10 backdrop-blur-md shadow-md"
           : "bg-[#0A0E27]"
-<<<<<<< HEAD
-      } ${isMobile ? "rounded-4xl" : ""}`}
-=======
-      }`}
->>>>>>> 9e07b93e323738270d116c204a59977050eaf990
+      } ${isMobile ? "rounded-2xl py-2" : ""}`}
     >
-      {/* Mobile Menu Toggle Button */}
-      {isMobile && (
-        <div className="flex justify-end items-center md:hidden px-4">
-<<<<<<< HEAD
-          <div className="left-0 fixed flex items-center justify-center w-16 h-16  rounded-full shadow-lg bg-transparent">
-            <img src={logo} className="w-20 h-15" />
-          </div>
-=======
->>>>>>> 9e07b93e323738270d116c204a59977050eaf990
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-            <motion.div
-              animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {isOpen ? <Close fontSize="large" /> : <Menu fontSize="large" />}
-            </motion.div>
-          </button>
-        </div>
-      )}
-
-      {/* Navigation Items */}
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={
-          isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }
-        }
-        transition={{ duration: 0.3 }}
-        className={`flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 overflow-hidden md:overflow-visible ${
-<<<<<<< HEAD
-          isMobile ? " " : "opacity-100 !h-auto"
-=======
-          isMobile ? "" : "opacity-100 !h-auto"
->>>>>>> 9e07b93e323738270d116c204a59977050eaf990
+      <div
+        className={`max-w-7xl mx-auto flex items-center ${
+          isMobile ? "justify-between" : "justify-center"
         }`}
       >
-        <NavItem to="/" icon={<Home fontSize="small" />} label="Home" />
-        <NavItem
-          to="/skill-set"
-          icon={<Person fontSize="small" />}
-          label="Skill Set"
-        />
-        <NavItem
-          to="/project"
-          icon={<ListAlt fontSize="small" />}
-          label="Projects"
-        />
-        <NavItem
-          to="/resume"
-          icon={<Description fontSize="small" />}
-          label="Resume"
-        />
-      </motion.div>
+        {/* Logo (Only show in mobile) */}
+        {isMobile && (
+          <img src={logo} className="w-14 -ml-2 h-12 object-contain" alt="Logo" />
+        )}
+
+        {/* Navigation Links */}
+        <div
+          className={`flex flex-row gap-3 items-center ${
+            isMobile ? "ml-2" : "space-x-8"
+          }`}
+        >
+          <NavItem to="/" icon={<Home fontSize="small" />} label="Home" />
+          <NavItem
+            to="/skill-set"
+            icon={<Person fontSize="small" />}
+            label="Skill Set"
+          />
+          <NavItem
+            to="/project"
+            icon={<ListAlt fontSize="small" />}
+            label="Projects"
+          />
+          <NavItem
+            to="/resume"
+            icon={<Description fontSize="small" />}
+            label="Resume"
+          />
+        </div>
+      </div>
     </nav>
   );
 };
 
-const NavItem = ({ to, icon, label }) => {
-  return (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        `flex items-center space-x-2 cursor-pointer ${
-          isActive ? "text-blue-400" : "hover:text-gray-300"
-        }`
-      }
-    >
-      {icon}
-      <span className="text-lg">{label}</span>
-    </NavLink>
-  );
-};
+const NavItem = ({ to, icon, label }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) =>
+      `flex items-center space-x-1 text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+        isActive ? "text-blue-400" : "hover:text-gray-300"
+      }`
+    }
+  >
+    {icon}
+    <span>{label}</span>
+  </NavLink>
+);
 
 export default Navbar;

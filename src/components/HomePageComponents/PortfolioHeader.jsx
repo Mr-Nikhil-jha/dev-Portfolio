@@ -16,7 +16,7 @@ const WavingHand = () => {
 
 const PortfolioHeader = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col md:flex-row items-center md:justify-between px-6 md:px-20 py-20 gap-y-6 md:gap-y-0">
+    <div className="bg-gradient-to-b  text-white min-h-screen flex flex-col md:flex-row items-center md:justify-between px-6 md:px-20 py-20 gap-y-6 md:gap-y-0">
       {/* Left Section */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}

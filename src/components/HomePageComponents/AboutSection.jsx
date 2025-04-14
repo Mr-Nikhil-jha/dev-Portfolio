@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-20">
+    <div className="bg-gradient-to-b  text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-20">
       {/* Left Section: Text Content */}
       <div className="space-y-8 flex-1 max-w-3xl">
         <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">

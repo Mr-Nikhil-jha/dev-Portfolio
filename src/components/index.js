@@ -9,6 +9,7 @@ import TechSkill from "./SkillSet/TechSkill";
 import TechUsed from "./SkillSet/TechUsed";
 import PortfolioHeader from "../components/HomePageComponents/PortfolioHeader.jsx";
 import AboutSection from "../components/HomePageComponents/AboutSection.jsx";
+import Loader from "./Loader.jsx";
 // import ProjectCard from "./ProjectCard/ProjectCard.jsx";
 
 export {
@@ -23,4 +24,5 @@ export {
   TechUsed,
   PortfolioHeader,
   AboutSection,
+  Loader,
 };

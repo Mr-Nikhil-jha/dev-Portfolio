@@ -18,6 +18,53 @@ body {
   color: white;
 }
 
-.MainHomePage {
+/* .MainHomePage {
   background-image: linear-gradient(to right, #111827, #000000, #111827);
+} */
+.navButton {
+  display: inline-block;
+  position: relative;
+}
+
+.navButton::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transition: transform 0.25s ease-out;
+}
+
+.navButton:hover::after {
+  transform: scaleX(1);
+}
+.navButton::after {
+  transform-origin: bottom left;
+}
+
+.navButton:hover::after {
+  transform-origin: bottom left;
+}
+/* components/Loader.css */
+.linediv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: #007bff;
+  z-index: 9999;
+  animation: lineGrow 1s ease-in forwards;
+}
+
+@keyframes lineGrow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }

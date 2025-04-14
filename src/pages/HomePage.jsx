@@ -51,7 +51,7 @@ function HomePage() {
 
       <AnimatedOnScroll delay={0.4}>
         {/* Recent Works Section */}
-        <div className="bg-gradient-to-b py-16 px-4 from-gray-900 via-black to-gray-900">
+        <div className=" py-16 px-4">
           {/* Title */}
           <div className="text-center w-max m-auto group">
             <h2 className="text-4xl md:text-5xl font-extrabold text-white relative">
